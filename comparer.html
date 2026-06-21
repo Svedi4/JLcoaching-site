@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Julien Lejeune — Comparateur de variantes</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0b0d12; --panel:#141821; --line:rgba(255,255,255,.09);
+    --text:#eef2f7; --muted:#94a0b2; --accent:#c6ff3d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  .wrap{max-width:1500px;margin:0 auto;padding:40px 28px 80px}
+  header.top{text-align:center;margin-bottom:14px}
+  h1{font-family:"Sora",sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em}
+  .sub{color:var(--muted);margin-top:10px;max-width:640px;margin-inline:auto}
+  .scale{display:flex;align-items:center;justify-content:center;gap:10px;margin:26px 0 36px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
+  .scale b{color:var(--accent)}
+  .scale .bar{height:4px;width:120px;border-radius:4px;background:linear-gradient(90deg,#b5654a,#4f6ef7,#ff4d2e,#c6ff3d)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:26px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+  .card:hover{transform:translateY(-4px);border-color:rgba(198,255,61,.4)}
+  .frame{position:relative;height:300px;background:#fff;overflow:hidden;border-bottom:1px solid var(--line)}
+  .frame iframe{position:absolute;top:0;left:0;width:1280px;height:960px;border:0;transform:scale(.36);transform-origin:top left;pointer-events:none}
+  .frame .veil{position:absolute;inset:0;cursor:pointer}
+  .meta{padding:20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .tagrow{display:flex;align-items:center;gap:10px}
+  .num{font-family:"Sora";font-weight:800;font-size:.8rem;color:var(--accent);background:rgba(198,255,61,.12);border:1px solid rgba(198,255,61,.25);padding:3px 10px;border-radius:999px}
+  .chip{font-size:.72rem;color:var(--muted);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+  h2{font-family:"Sora";font-size:1.2rem;font-weight:700}
+  .desc{color:var(--muted);font-size:.9rem;flex:1}
+  .actions{display:flex;gap:10px;margin-top:6px}
+  .btn{flex:1;text-align:center;padding:11px 14px;border-radius:10px;font-weight:600;font-size:.88rem;text-decoration:none;transition:.2s}
+  .btn-p{background:linear-gradient(135deg,#c6ff3d,#9be000);color:#0b0d12}
+  .btn-p:hover{filter:brightness(1.08)}
+  .btn-g{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn-g:hover{border-color:var(--accent);color:var(--accent)}
+  footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:50px}
+  .orig{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>5 variantes — Julien Lejeune Coaching</h1>
+    <p class="sub">Du plus sobre & personnel au plus pro/premium. Clique sur un aperçu pour ouvrir la version en plein écran.</p>
+    <div class="scale">
+      <span>Sobre / personnel</span><span class="bar"></span><span>Pro / premium</span>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="frame"><iframe src="variants/variant-1-sobre.html" loading="lazy" title="Variante 1"></iframe><a class="veil" href="variants/variant-1-sobre.html" target="_blank" aria-label="Ouvrir variante 1"></a></div>
+      <div class="meta">
+        <div class="tagrow"><span class="num">01</span><span class="chip">Crème · Serif</span><span class="chip">Minimaliste</span></div>
+        <h2>Sobre & Personnel</h2>
+        <p class="desc">Minimaliste, beaucoup d'espace blanc, typographie serif élégante, une seule colonne. Ton intime, comme une carte de visite haut de gamme. Accent terracotta discret.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="variants/variant-1-sobre.html" target="_blank">Ouvrir</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="variants/variant-2-editorial.html" loading="lazy" title="Variante 2"></iframe><a class="veil" href="variants/variant-2-editorial.html" target="_blank" aria-label="Ouvrir variante 2"></a></div>
+      <div class="meta">
+        <div class="tagrow"><span class="num">02</span><span class="chip">Tons chauds</span><span class="chip">Magazine</span></div>
+        <h2>Éditorial Chaleureux</h2>
+        <p class="desc">Style magazine / portfolio personnel. Tons chauds (terracotta, ocre), grandes citations, blocs asymétriques, storytelling. Authentique et humain.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="variants/variant-2-editorial.html" target="_blank">Ouvrir</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="variants/variant-3-clair.html" loading="lazy" title="Variante 3"></iframe><a class="veil" href="variants/variant-3-clair.html" target="_blank" aria-label="Ouvrir variante 3"></a></div>
+      <div class="meta">
+        <div class="tagrow"><span class="num">03</span><span class="chip">Light · Indigo</span><span class="chip">SaaS</span></div>
+        <h2>Clair & Moderne</h2>
+        <p class="desc">Light theme type Linear / Stripe. Blanc, accent indigo, cartes nettes, ombres douces, formulaire de contact. Équilibre parfait perso ↔ corporate.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="variants/variant-3-clair.html" target="_blank">Ouvrir</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="variants/variant-4-dynamique.html" loading="lazy" title="Variante 4"></iframe><a class="veil" href="variants/variant-4-dynamique.html" target="_blank" aria-label="Ouvrir variante 4"></a></div>
+      <div class="meta">
+        <div class="tagrow"><span class="num">04</span><span class="chip">Orange · Bold</span><span class="chip">Sportif</span></div>
+        <h2>Dynamique & Sportif</h2>
+        <p class="desc">Énergique et punchy. Typographie condensée XXL, diagonales, bandeau défilant, compteurs animés, accents orange/rouge. Sensation fitness & mouvement.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="variants/variant-4-dynamique.html" target="_blank">Ouvrir</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="frame"><iframe src="variants/variant-5-pro.html" loading="lazy" title="Variante 5"></iframe><a class="veil" href="variants/variant-5-pro.html" target="_blank" aria-label="Ouvrir variante 5"></a></div>
+      <div class="meta">
+        <div class="tagrow"><span class="num">05</span><span class="chip">Dark · Lime</span><span class="chip">Premium</span></div>
+        <h2>Pro Premium</h2>
+        <p class="desc">Dark haut de gamme, verre dépoli, orbes lumineux, glassmorphism, animations soignées, formulaire bi-colonne. Style agence digitale, le plus abouti.</p>
+        <div class="actions">
+          <a class="btn btn-p" href="variants/variant-5-pro.html" target="_blank">Ouvrir</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    <p>Contenu repris de jlcoaching.carrd.co · données fictives pour l'email — à confirmer.</p>
+    <a class="orig" href="index.html" target="_blank">↗ Voir aussi la première version (dark) créée à la racine</a>
+  </footer>
+</div>
+</body>
+</html>
