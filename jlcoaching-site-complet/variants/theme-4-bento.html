@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Julien Lejeune — Coach Sportif & Préparateur Physique</title>
+<meta name="description" content="Julien Lejeune, Coach Sportif & Préparateur Physique en Belgique. Performance, évolution, conditionnement. À domicile, en salle ou en privé." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --creme:#F6F4EF;
+    --creme-2:#efece4;
+    --or:#C18736;
+    --ambre:#FFC24F;
+    --charbon:#24262B;
+    --charbon-2:#191A1C;
+    --blanc:#FFFFFF;
+    --radius:22px;
+    --radius-sm:16px;
+    --gap:16px;
+    --maxw:1200px;
+    --shadow:0 14px 40px -18px rgba(25,26,28,.28);
+    --shadow-soft:0 8px 24px -14px rgba(25,26,28,.22);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    background:var(--creme);
+    color:var(--charbon);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.font-display{font-family:"Outfit",sans-serif;line-height:1.08}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .or{color:var(--or)}
+  .gold-text{color:var(--or)}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(246,244,239,.82);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(36,38,43,.07);
+    transition:box-shadow .3s var(--ease),background .3s var(--ease);
+  }
+  nav.scrolled{box-shadow:0 6px 24px -16px rgba(25,26,28,.4)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:"Outfit";font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+  .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--or)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-weight:500;font-size:.95rem;color:var(--charbon);position:relative;padding:4px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--or);transition:width .3s var(--ease)}
+  .nav-links a:hover::after{width:100%}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:"Outfit";font-weight:700;font-size:.95rem;
+    padding:13px 24px;border-radius:999px;cursor:pointer;border:none;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease);
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--or),var(--ambre));color:var(--charbon-2);box-shadow:0 10px 26px -12px rgba(193,135,54,.7)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(193,135,54,.85)}
+  .btn-dark{background:var(--charbon);color:var(--creme)}
+  .btn-dark:hover{transform:translateY(-2px);background:var(--charbon-2)}
+  .btn-ghost{background:transparent;border:1.5px solid rgba(36,38,43,.25);color:var(--charbon)}
+  .btn-ghost:hover{border-color:var(--or);color:var(--or)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:2.5px;background:var(--charbon);border-radius:3px;transition:.3s var(--ease)}
+  .burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .mobile-menu{
+    display:none;position:fixed;inset:72px 0 auto 0;z-index:55;
+    background:var(--creme);border-bottom:1px solid rgba(36,38,43,.08);
+    padding:18px 22px 26px;flex-direction:column;gap:8px;
+    transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s var(--ease);
+  }
+  .mobile-menu.show{transform:translateY(0);opacity:1;pointer-events:auto}
+  .mobile-menu a{padding:13px 6px;font-family:"Outfit";font-weight:600;border-bottom:1px solid rgba(36,38,43,.06)}
+  .mobile-menu .btn{margin-top:10px;justify-content:center}
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:84px 0}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:"Outfit";font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--or);margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--or);display:inline-block}
+  .sec-title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .sec-sub{color:rgba(36,38,43,.66);max-width:560px;font-size:1.04rem}
+
+  /* ---------- HERO BENTO ---------- */
+  .hero{padding:34px 0 70px}
+  .bento{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:minmax(120px,auto);
+    gap:var(--gap);
+  }
+  .tile{
+    border-radius:var(--radius);
+    padding:26px;
+    position:relative;
+    overflow:hidden;
+    transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+    box-shadow:var(--shadow-soft);
+  }
+  .tile:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+
+  /* titre / nom */
+  .t-title{grid-column:span 2;grid-row:span 2;background:var(--blanc);display:flex;flex-direction:column;justify-content:center}
+  .t-title .badge{display:inline-flex;align-items:center;gap:8px;font-family:"Outfit";font-weight:600;font-size:.8rem;letter-spacing:.04em;color:var(--or);background:var(--creme-2);padding:7px 14px;border-radius:999px;width:max-content;margin-bottom:20px}
+  .t-title .badge svg{width:14px;height:14px}
+  .t-title h1{font-size:clamp(2.4rem,5.2vw,4rem);font-weight:800;letter-spacing:-.03em}
+  .t-title h1 .ln1{color:var(--or)}
+  .t-title h1 .ln2{color:var(--charbon)}
+  .t-title .role{font-family:"Outfit";font-weight:600;font-size:1.05rem;color:rgba(36,38,43,.7);margin-top:14px}
+  .tagline{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .tagline span{font-family:"Outfit";font-weight:600;font-size:.82rem;color:var(--charbon);background:var(--creme);border:1px solid rgba(36,38,43,.1);padding:6px 13px;border-radius:999px}
+  .tagline span:first-child{border-color:var(--or);color:var(--or)}
+
+  /* grande photo */
+  .t-photo{grid-column:span 2;grid-row:span 3;padding:0;background:var(--charbon)}
+  .t-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s var(--ease)}
+  .t-photo:hover img{transform:scale(1.04)}
+  .t-photo .ov{position:absolute;inset:auto 0 0 0;padding:24px;background:linear-gradient(transparent,rgba(25,26,28,.82));color:var(--creme)}
+  .t-photo .ov .ph{font-family:"Outfit";font-weight:700;font-size:1.18rem;letter-spacing:-.01em}
+  .t-photo .ov .pc{font-size:.88rem;opacity:.82;margin-top:3px}
+
+  /* logo */
+  .t-logo{background:var(--charbon-2);display:flex;align-items:center;justify-content:center;padding:18px}
+  .t-logo img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--or);box-shadow:0 0 0 6px rgba(193,135,54,.14)}
+
+  /* stat */
+  .t-stat{background:var(--blanc);display:flex;flex-direction:column;justify-content:center}
+  .t-stat .num{font-family:"Outfit";font-weight:800;font-size:2.1rem;color:var(--or);letter-spacing:-.02em}
+  .t-stat .lbl{font-size:.82rem;color:rgba(36,38,43,.62);font-weight:500;margin-top:2px}
+  .t-stat.dark{background:var(--charbon)}
+  .t-stat.dark .num{color:var(--ambre)}
+  .t-stat.dark .lbl{color:rgba(246,244,239,.66)}
+
+  /* CTA dorée */
+  .t-cta{grid-column:span 2;background:linear-gradient(135deg,var(--or),var(--ambre));color:var(--charbon-2);display:flex;flex-direction:column;justify-content:center}
+  .t-cta p{font-family:"Outfit";font-weight:700;font-size:1.3rem;line-height:1.2;letter-spacing:-.01em;max-width:340px}
+  .t-cta .btn{margin-top:18px;width:max-content}
+  .t-cta .deco{position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.16)}
+
+  /* modes */
+  .t-modes{grid-column:span 2;background:var(--charbon);color:var(--creme)}
+  .t-modes h4{font-family:"Outfit";font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ambre);margin-bottom:16px}
+  .modes-row{display:flex;flex-wrap:wrap;gap:12px}
+  .mode{display:flex;align-items:center;gap:10px;background:rgba(246,244,239,.06);border:1px solid rgba(246,244,239,.12);padding:11px 16px;border-radius:14px;font-family:"Outfit";font-weight:600;font-size:.92rem}
+  .mode svg{width:18px;height:18px;color:var(--ambre)}
+
+  /* ---------- SERVICES (bento) ---------- */
+  .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+  .serv{
+    background:var(--blanc);border-radius:var(--radius);padding:28px;
+    border:1px solid rgba(36,38,43,.06);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+    display:flex;flex-direction:column;
+  }
+  .serv:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .serv .ic{width:50px;height:50px;border-radius:14px;background:var(--creme-2);display:flex;align-items:center;justify-content:center;color:var(--or);margin-bottom:18px}
+  .serv .ic svg{width:24px;height:24px}
+  .serv h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+  .serv p{color:rgba(36,38,43,.66);font-size:.96rem;margin-top:8px}
+  .serv.big{grid-column:span 1}
+  .serv.feature{background:var(--charbon);color:var(--creme);border:none}
+  .serv.feature .ic{background:rgba(255,194,79,.16);color:var(--ambre)}
+  .serv.feature p{color:rgba(246,244,239,.7)}
+
+  /* ---------- ABOUT ---------- */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .about-media{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow)}
+  .about-media img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .about-media .tag{position:absolute;left:18px;bottom:18px;background:rgba(25,26,28,.78);backdrop-filter:blur(6px);color:var(--creme);padding:12px 18px;border-radius:14px;font-family:"Outfit";font-weight:700}
+  .about-media .tag span{display:block;font-size:.78rem;font-weight:500;color:var(--ambre)}
+  .about p{color:rgba(36,38,43,.74);font-size:1.06rem;margin-bottom:18px}
+  .specs{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .spec{display:inline-flex;align-items:center;gap:8px;background:var(--blanc);border:1px solid rgba(36,38,43,.1);padding:9px 15px;border-radius:999px;font-family:"Outfit";font-weight:600;font-size:.88rem}
+  .spec svg{width:15px;height:15px;color:var(--or)}
+
+  /* ---------- GALLERY ---------- */
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:var(--gap)}
+  .gal figure{border-radius:var(--radius-sm);overflow:hidden;position:relative;box-shadow:var(--shadow-soft)}
+  .gal figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  .gal figure:hover img{transform:scale(1.07)}
+  .gal .g1{grid-column:span 2;grid-row:span 2}
+  .gal .g2{grid-column:span 2}
+  .gal .g3{grid-column:span 1}
+  .gal .g4{grid-column:span 1}
+  .gal figcaption{position:absolute;left:14px;bottom:12px;color:var(--creme);font-family:"Outfit";font-weight:700;font-size:.92rem;text-shadow:0 2px 8px rgba(0,0,0,.6);z-index:2}
+  .gal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(25,26,28,.6))}
+
+  /* ---------- PRICING ---------- */
+  .pricing{background:var(--charbon-2);color:var(--creme)}
+  .pricing .eyebrow{color:var(--ambre)}
+  .pricing .eyebrow::before{background:var(--ambre)}
+  .pricing .sec-sub{color:rgba(246,244,239,.66)}
+  .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:48px}
+  .pcard{
+    background:rgba(246,244,239,.05);border:1px solid rgba(246,244,239,.1);
+    border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column;
+    transition:transform .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease);
+  }
+  .pcard:hover{transform:translateY(-6px);border-color:rgba(255,194,79,.45)}
+  .pcard h3{font-size:1.18rem;font-weight:700}
+  .pcard .price{font-family:"Outfit";font-weight:800;font-size:1.9rem;color:var(--ambre);margin:14px 0 4px;letter-spacing:-.02em}
+  .pcard .price small{font-size:.85rem;font-weight:500;color:rgba(246,244,239,.6)}
+  .pcard ul{list-style:none;margin:18px 0 24px;display:flex;flex-direction:column;gap:11px}
+  .pcard li{display:flex;gap:10px;font-size:.93rem;color:rgba(246,244,239,.8)}
+  .pcard li svg{width:17px;height:17px;color:var(--or);flex-shrink:0;margin-top:3px}
+  .pcard .btn{margin-top:auto;justify-content:center}
+  .pcard.featured{background:linear-gradient(160deg,rgba(193,135,54,.22),rgba(255,194,79,.08));border:1.5px solid var(--or);position:relative}
+  .pcard.featured .ribbon{position:absolute;top:18px;right:18px;background:linear-gradient(135deg,var(--or),var(--ambre));color:var(--charbon-2);font-family:"Outfit";font-weight:700;font-size:.7rem;letter-spacing:.06em;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+  .contact-info .ci{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(36,38,43,.08)}
+  .contact-info .ci .ic{width:46px;height:46px;border-radius:12px;background:var(--creme-2);display:flex;align-items:center;justify-content:center;color:var(--or);flex-shrink:0}
+  .contact-info .ci .ic svg{width:21px;height:21px}
+  .contact-info .ci .lbl{font-size:.78rem;color:rgba(36,38,43,.55);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+  .contact-info .ci .val{font-family:"Outfit";font-weight:600;font-size:1.02rem}
+  form{background:var(--blanc);border:1px solid rgba(36,38,43,.07);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-soft)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-family:"Outfit";font-weight:600;font-size:.88rem;margin-bottom:7px}
+  .field input,.field textarea{
+    width:100%;padding:13px 15px;border:1.5px solid rgba(36,38,43,.14);border-radius:12px;
+    font-family:"Inter";font-size:.96rem;background:var(--creme);color:var(--charbon);transition:border-color .25s var(--ease),box-shadow .25s var(--ease);
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--or);box-shadow:0 0 0 3px rgba(193,135,54,.14)}
+  .field textarea{resize:vertical;min-height:110px}
+  .field.invalid input,.field.invalid textarea{border-color:#d4524a}
+  .err{color:#d4524a;font-size:.8rem;margin-top:6px;display:none}
+  .field.invalid .err{display:block}
+  form .btn{width:100%;justify-content:center;margin-top:6px}
+  .form-success{display:none;background:rgba(193,135,54,.12);border:1px solid var(--or);color:var(--or);padding:14px 18px;border-radius:12px;font-family:"Outfit";font-weight:600;margin-bottom:18px;align-items:center;gap:10px}
+  .form-success.show{display:flex}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--charbon-2);color:rgba(246,244,239,.7);padding:54px 0 30px}
+  .foot-top{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid rgba(246,244,239,.1)}
+  .foot-brand{display:flex;align-items:center;gap:14px}
+  .foot-brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--or)}
+  .foot-brand .n{font-family:"Outfit";font-weight:800;font-size:1.2rem;color:var(--creme)}
+  .foot-brand .n .or{color:var(--or)}
+  .foot-brand .s{font-size:.85rem}
+  .foot-soc{display:flex;gap:12px}
+  .foot-soc a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(246,244,239,.18);display:flex;align-items:center;justify-content:center;color:var(--creme);transition:.25s var(--ease)}
+  .foot-soc a:hover{background:var(--or);border-color:var(--or);color:var(--charbon-2)}
+  .foot-soc svg{width:19px;height:19px}
+  .foot-bot{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:980px){
+    .bento{grid-template-columns:repeat(2,1fr)}
+    .t-title{grid-column:span 2;grid-row:auto}
+    .t-photo{grid-column:span 2;grid-row:auto;min-height:380px}
+    .t-cta,.t-modes{grid-column:span 2}
+    .serv-grid{grid-template-columns:repeat(2,1fr)}
+    .about{grid-template-columns:1fr;gap:34px}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    .gal .g1{grid-column:span 2}
+    .price-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr;gap:34px}
+  }
+  @media(max-width:620px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:flex}
+    section{padding:60px 0}
+    .bento{grid-template-columns:1fr}
+    .t-title,.t-photo,.t-cta,.t-modes,.t-logo,.t-stat{grid-column:span 1}
+    .t-photo{min-height:340px}
+    .serv-grid{grid-template-columns:1fr}
+    .gal{grid-template-columns:1fr;grid-auto-rows:220px}
+    .gal .g1{grid-column:span 1;grid-row:span 1}
+    .price-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="#hero" class="brand">
+      <img src="../assets/img/original/image01.jpg" alt="Logo JL Coaching" />
+      <span><span class="or">JL</span> Coaching</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-gold">Réserver un bilan</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#apropos">À propos</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-gold">Réserver un bilan</a>
+</div>
+
+<!-- HERO BENTO -->
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="bento">
+
+      <!-- titre / nom -->
+      <div class="tile t-title reveal">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          Coach certifié · Belgique
+        </span>
+        <h1><span class="ln1">Julien</span><br/><span class="ln2">Lejeune</span></h1>
+        <p class="role">Coach Sportif & Préparateur Physique</p>
+        <div class="tagline">
+          <span>Performance</span><span>Évolution</span><span>Conditionnement</span>
+        </div>
+      </div>
+
+      <!-- grande photo -->
+      <div class="tile t-photo reveal">
+        <img src="../assets/img/original/image06.jpg" alt="Julien Lejeune, coach sportif" />
+        <div class="ov">
+          <div class="ph">Transformez vos objectifs</div>
+          <div class="pc">en résultats concrets et durables.</div>
+        </div>
+      </div>
+
+      <!-- stats -->
+      <div class="tile t-stat reveal">
+        <div class="num">4+</div>
+        <div class="lbl">années d'expérience</div>
+      </div>
+      <div class="tile t-stat dark reveal">
+        <div class="num">100%</div>
+        <div class="lbl">personnalisé</div>
+      </div>
+
+      <!-- logo -->
+      <div class="tile t-logo reveal">
+        <img src="../assets/img/original/image01.jpg" alt="Logo JL Coaching" />
+      </div>
+
+      <!-- stat -->
+      <div class="tile t-stat reveal">
+        <div class="num">5</div>
+        <div class="lbl">disciplines</div>
+      </div>
+
+      <!-- CTA dorée -->
+      <div class="tile t-cta reveal">
+        <div class="deco" aria-hidden="true"></div>
+        <p>« Transformez vos objectifs en résultats concrets et durables. »</p>
+        <a href="#contact" class="btn btn-dark">
+          Réserver un bilan
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <!-- modes -->
+      <div class="tile t-modes reveal">
+        <h4>Modes d'accompagnement</h4>
+        <div class="modes-row">
+          <span class="mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+            À domicile
+          </span>
+          <span class="mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7v10M18 7v10M4 12h16M2 9v6M22 9v6"/></svg>
+            En salle
+          </span>
+          <span class="mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+            Privé
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES (bento) -->
+<section id="services">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Spécialités</span>
+      <h2 class="sec-title">Des compétences au service<br/>de votre <span class="or">progression</span></h2>
+      <p class="sec-sub">Un accompagnement complet, du renforcement aux sports de combat, pensé pour vos objectifs.</p>
+    </div>
+    <div class="serv-grid" style="margin-top:48px">
+      <div class="serv feature reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5l11 11M4 9l-2 2 3 3 2-2M20 15l2-2-3-3-2 2M9 4l2-2 3 3-2 2M15 20l-2 2-3-3 2-2"/></svg></div>
+        <h3>Renforcement musculaire</h3>
+        <p>Développez force, masse et structure avec une programmation rigoureuse et progressive.</p>
+      </div>
+      <div class="serv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+        <h3>Remise en forme</h3>
+        <p>Retrouvez énergie, mobilité et bien-être avec un plan adapté à votre rythme.</p>
+      </div>
+      <div class="serv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg></div>
+        <h3>Préparation fonctionnelle</h3>
+        <p>Améliorez vos qualités athlétiques : explosivité, équilibre et coordination.</p>
+      </div>
+      <div class="serv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="9" r="3"/><path d="M10 9h8l3 3-3 3h-4"/><path d="M14 12v4"/></svg></div>
+        <h3>Boxe</h3>
+        <p>Technique, cardio et puissance : la boxe pour vous dépasser et vous canaliser.</p>
+      </div>
+      <div class="serv reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2l-2 5 4 2-3 6M9 22l1-6-4-2 3-6"/></svg></div>
+        <h3>Sports de combat</h3>
+        <p>Maîtrise, discipline et condition physique au travers d'un entraînement complet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos" style="background:var(--creme-2)">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-media reveal">
+        <img src="../assets/img/original/image02.jpg" alt="Portrait de Julien Lejeune" />
+        <div class="tag">Julien Lejeune<span>Coach & Préparateur physique</span></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">À propos</span>
+        <h2 class="sec-title">Une expertise forgée<br/>en <span class="or">Australie</span></h2>
+        <p>« Au cours de mon aventure en Australie, où j'ai effectué mes études dans le domaine du sport et acquis plus de 4 ans d'expérience, j'ai développé une approche complète de la performance. De retour en Belgique, je mets cette expertise au service de mes clients. Mon objectif : transformer vos objectifs en résultats concrets et durables. »</p>
+        <div class="specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Renforcement musculaire</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Remise en forme</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Préparation fonctionnelle</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Boxe</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Sports de combat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">En action</span>
+      <h2 class="sec-title">L'entraînement <span class="or">en images</span></h2>
+      <p class="sec-sub">Force, technique et intensité — un aperçu du travail au quotidien.</p>
+    </div>
+    <div class="gal" style="margin-top:48px">
+      <figure class="g1 reveal"><img src="../assets/img/original/image03.jpg" alt="Traction en salle" /><figcaption>Force & gainage</figcaption></figure>
+      <figure class="g2 reveal"><img src="../assets/img/original/image04.jpg" alt="Coup de boxe" /><figcaption>Boxe & combat</figcaption></figure>
+      <figure class="g3 reveal"><img src="../assets/img/original/image06.jpg" alt="Portrait coach" /><figcaption>Le coach</figcaption></figure>
+      <figure class="g4 reveal"><img src="../assets/img/original/image02.jpg" alt="Portrait N&B" /><figcaption>Discipline</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs" class="pricing">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Services & tarifs</span>
+      <h2 class="sec-title">Un format pour<br/>chaque <span class="or">ambition</span></h2>
+      <p class="sec-sub">Des formules claires et flexibles, du suivi à distance au coaching en présentiel.</p>
+    </div>
+    <div class="price-grid">
+      <div class="pcard reveal">
+        <h3>Semi-présentiel</h3>
+        <div class="price">dès 99 €<small>/mois</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Distanciel + présentiel</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Programme sur-mesure</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Suivi WhatsApp & ajustements</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>1 séance mensuelle incluse</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="border-color:rgba(246,244,239,.3);color:var(--creme)">Choisir</a>
+      </div>
+
+      <div class="pcard reveal">
+        <h3>Coaching Solo</h3>
+        <div class="price">50 €<small>/séance</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>100% personnalisée</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Corrections techniques</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Motivation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Progression</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="border-color:rgba(246,244,239,.3);color:var(--creme)">Choisir</a>
+      </div>
+
+      <div class="pcard featured reveal">
+        <span class="ribbon">Le + populaire</span>
+        <h3>Pack 10 Séances</h3>
+        <div class="price">450 €</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Planification</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Suivi régulier</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>50 € d'économie</li>
+        </ul>
+        <a href="#contact" class="btn btn-gold">Choisir ce pack</a>
+      </div>
+
+      <div class="pcard reveal">
+        <h3>Duo & Groupe</h3>
+        <div class="price">dès 25 €<small>/personne</small></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Adapté à chacun</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Soutien mutuel</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>Objectifs personnalisés</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="border-color:rgba(246,244,239,.3);color:var(--creme)">Choisir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 class="sec-title">Prêt à <span class="or">commencer</span> ?</h2>
+      <p class="sec-sub">Réservez un bilan et construisons ensemble votre plan de progression.</p>
+    </div>
+    <div class="contact-grid" style="margin-top:48px">
+      <div class="contact-info reveal">
+        <div class="ci">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7A2 2 0 0 1 22 16.9z"/></svg></div>
+          <div><div class="lbl">Téléphone</div><a class="val" href="tel:+32496878240">+32 496 87 82 40</a></div>
+        </div>
+        <div class="ci">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></div>
+          <div><div class="lbl">Email</div><a class="val" href="mailto:contact@jlcoaching.be">contact@jlcoaching.be</a></div>
+        </div>
+        <div class="ci">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+          <div><div class="lbl">Instagram</div><a class="val" href="https://instagram.com/jlcoachperf">@jlcoachperf</a></div>
+        </div>
+        <div class="ci">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="lbl">Zone</div><div class="val">Belgique</div></div>
+        </div>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12l5 5L20 6"/></svg>
+          Merci ! Votre message a bien été envoyé.
+        </div>
+        <div class="field" id="f-name">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" />
+          <span class="err">Merci d'indiquer votre nom.</span>
+        </div>
+        <div class="field" id="f-email">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="vous@email.com" />
+          <span class="err">Merci d'indiquer un email valide.</span>
+        </div>
+        <div class="field" id="f-phone">
+          <label for="phone">Téléphone (optionnel)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+32 ..." />
+        </div>
+        <div class="field" id="f-msg">
+          <label for="msg">Votre objectif</label>
+          <textarea id="msg" name="msg" placeholder="Parlez-moi de vos objectifs..."></textarea>
+          <span class="err">Merci de décrire votre objectif (10 caractères min.).</span>
+        </div>
+        <button type="submit" class="btn btn-gold">
+          Réserver un bilan
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="../assets/img/original/image01.jpg" alt="Logo JL Coaching" />
+        <div>
+          <div class="n"><span class="or">Julien</span> Lejeune</div>
+          <div class="s">Coach Sportif & Préparateur Physique · Belgique</div>
+        </div>
+      </div>
+      <div class="foot-soc">
+        <a href="https://instagram.com/jlcoachperf" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="tel:+32496878240" aria-label="Téléphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7A2 2 0 0 1 22 16.9z"/></svg></a>
+        <a href="mailto:contact@jlcoaching.be" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M3 6l9 7 9-7"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 JL Coaching — Julien Lejeune. Tous droits réservés.</span>
+      <span>Performance · Évolution · Conditionnement</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scrolled shadow
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, {passive:true});
+
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  function closeMenu(){ burger.classList.remove('open'); menu.classList.remove('show'); burger.setAttribute('aria-expanded','false'); }
+  burger.addEventListener('click', function(){
+    var open = burger.classList.toggle('open');
+    menu.classList.toggle('show', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  // Reveal on scroll
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  // Form validation
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+  function setInvalid(id, bad){ document.getElementById(id).classList.toggle('invalid', bad); }
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var msg = document.getElementById('msg').value.trim();
+    var ok = true;
+    if(!name){ setInvalid('f-name', true); ok = false; } else setInvalid('f-name', false);
+    if(!isEmail(email)){ setInvalid('f-email', true); ok = false; } else setInvalid('f-email', false);
+    if(msg.length < 10){ setInvalid('f-msg', true); ok = false; } else setInvalid('f-msg', false);
+    if(ok){
+      success.classList.add('show');
+      form.reset();
+      success.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+      setTimeout(function(){ success.classList.remove('show'); }, 6000);
+    }
+  });
+  ['name','email','msg'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(){
+      document.getElementById('f-'+id).classList.remove('invalid');
+    });
+  });
+</script>
+</body>
+</html>
