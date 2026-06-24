@@ -484,7 +484,13 @@
     .quick-mobile-logo{display:block;width:66px;height:66px;margin:20px auto 0;border-radius:11px;border:0;object-fit:cover;background:transparent;padding:0;box-shadow:0 0 0 2px rgba(193,135,54,.72)}
     #services,#specialites,#galerie{padding-top:48px}
     #apropos{padding-top:52px}
-    .about-grid{gap:28px}
+    .about-grid{display:flex;flex-direction:column;gap:28px;align-items:stretch}
+    .about-text{display:contents}
+    .about-text .eyebrow{order:1;align-self:flex-start}
+    .about-photo{order:2}
+    .about-text h2,
+    .about-text p,
+    .about-mini{order:3}
     #contact{padding-top:44px}
     #services .sec-head h2,
     #contact .sec-head h2{font-size:clamp(1.82rem,8vw,2.08rem);white-space:nowrap}
